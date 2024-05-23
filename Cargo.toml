@@ -189,7 +189,7 @@ members = [
 	"polkadot/parachain/test-parachains/halt",
 	"polkadot/parachain/test-parachains/undying",
 	"polkadot/parachain/test-parachains/undying/collator",
-	"polkadot/primitives/polkadot-primitives",
+	"polkadot/primitives",
 	"polkadot/primitives/test-helpers",
 	"polkadot/rpc",
 	"polkadot/runtime/common",

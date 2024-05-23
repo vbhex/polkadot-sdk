@@ -13052,7 +13052,7 @@ dependencies = [
 
 [[package]]
 name = "polkadot-primitives"
-version = "7.0.0"
+version = "1.0.0"
 dependencies = [
  "bitvec",
  "hex-literal",

@@ -500,6 +500,9 @@ members = [
 ]
 default-members = ["polkadot", "substrate/bin/node/cli"]
 
+[patch.crates-io]
+polkadot-primitives = { git = "https://github.com/vbhex/polkadot-sdk", branch = "main", path = "polkadot/primitives" }
+
 [workspace.lints.rust]
 suspicious_double_ref_op = { level = "allow", priority = 2 }
 

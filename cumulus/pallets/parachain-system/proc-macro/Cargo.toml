@@ -13,9 +13,9 @@ workspace = true
 proc-macro = true
 
 [dependencies]
-syn = "2.0.48"
+syn = "2.0.58"
 proc-macro2 = "1.0.64"
-quote = "1.0.33"
+quote = "1.0.36"
 proc-macro-crate = "3.0.0"
 
 [features]

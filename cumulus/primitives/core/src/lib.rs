@@ -18,7 +18,6 @@
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
-pub use polkadot_core_primitives::BlockNumber as CoreCoreBlockNumber;
 use codec::{Decode, Encode, MaxEncodedLen};
 use polkadot_parachain_primitives::primitives::HeadData;
 use scale_info::TypeInfo;
@@ -49,7 +48,7 @@ pub mod relay_chain {
 }
 
 /// An inbound HRMP message.
-pub type InboundHrmpMessage = polkadot_primitives::InboundHrmpMessage<relay_chain::CoreBlockNumber>;
+pub type InboundHrmpMessage = polkadot_primitives::InboundHrmpMessage<relay_chain::BlockNumber>;
 
 /// And outbound HRMP message
 pub type OutboundHrmpMessage = polkadot_primitives::OutboundHrmpMessage<ParaId>;
@@ -301,7 +300,7 @@ pub mod rpsr_digest {
 	/// Construct a digest item for relay-parent storage roots.
 	pub fn relay_parent_storage_root_item(
 		storage_root: relay_chain::Hash,
-		number: impl Into<Compact<relay_chain::CoreBlockNumber>>,
+		number: impl Into<Compact<relay_chain::BlockNumber>>,
 	) -> DigestItem {
 		DigestItem::Consensus(RPSR_CONSENSUS_ID, (storage_root, number.into()).encode())
 	}
@@ -310,10 +309,10 @@ pub mod rpsr_digest {
 	/// `None` if none were found.
 	pub fn extract_relay_parent_storage_root(
 		digest: &Digest,
-	) -> Option<(relay_chain::Hash, relay_chain::CoreBlockNumber)> {
+	) -> Option<(relay_chain::Hash, relay_chain::BlockNumber)> {
 		digest.convert_first(|d| match d {
 			DigestItem::Consensus(id, val) if id == &RPSR_CONSENSUS_ID => {
-				let (h, n): (relay_chain::Hash, Compact<relay_chain::CoreBlockNumber>) =
+				let (h, n): (relay_chain::Hash, Compact<relay_chain::BlockNumber>) =
 					Decode::decode(&mut &val[..]).ok()?;
 
 				Some((h, n.0))
@@ -338,7 +337,7 @@ pub struct CollationInfoV1 {
 	pub processed_downward_messages: u32,
 	/// The mark which specifies the block number up to which all inbound HRMP messages are
 	/// processed.
-	pub hrmp_watermark: relay_chain::CoreBlockNumber,
+	pub hrmp_watermark: relay_chain::BlockNumber,
 }
 
 impl CollationInfoV1 {
@@ -368,7 +367,7 @@ pub struct CollationInfo {
 	pub processed_downward_messages: u32,
 	/// The mark which specifies the block number up to which all inbound HRMP messages are
 	/// processed.
-	pub hrmp_watermark: relay_chain::CoreBlockNumber,
+	pub hrmp_watermark: relay_chain::BlockNumber,
 	/// The head data, aka encoded header, of the block that corresponds to the collation.
 	pub head_data: HeadData,
 }

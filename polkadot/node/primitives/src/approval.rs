@@ -15,7 +15,9 @@
 // along with Polkadot.  If not, see <http://www.gnu.org/licenses/>.
 
 //! Types relevant for approval.
-
+use sp_consensus_babe::digests::CompatibleDigestItem;
+use sp_application_crypto::AppCrypto;
+use sp_core::sr25519;
 /// A list of primitives introduced in v1.
 pub mod v1 {
 	use sp_consensus_babe as babe_primitives;

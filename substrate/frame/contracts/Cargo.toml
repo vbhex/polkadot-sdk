@@ -55,7 +55,7 @@ xcm = { package = "staging-xcm", path = "../../../polkadot/xcm", default-feature
 xcm-builder = { package = "staging-xcm-builder", path = "../../../polkadot/xcm/xcm-builder", default-features = false }
 
 [dev-dependencies]
-array-bytes = "6.1"
+array-bytes = "6.2"
 assert_matches = "1"
 env_logger = "0.9"
 pretty_assertions = "1"

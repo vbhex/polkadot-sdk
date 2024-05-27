@@ -50,7 +50,7 @@ sp-state-machine = { path = "../../primitives/state-machine", default-features =
 sp-externalities = { path = "../../primitives/externalities", default-features = false }
 
 # 3rd party
-array-bytes = { version = "6.1", optional = true }
+array-bytes = { version = "6.2", optional = true }
 log = { version = "0.4.17", default-features = false }
 
 [dev-dependencies]

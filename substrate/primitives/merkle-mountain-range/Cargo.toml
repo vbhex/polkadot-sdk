@@ -28,7 +28,7 @@ sp-std = { path = "../std", default-features = false }
 thiserror = "1.0"
 
 [dev-dependencies]
-array-bytes = "6.1"
+array-bytes = "6.2"
 
 [features]
 default = ["std"]

@@ -33,7 +33,7 @@ sp-genesis-builder = { path = "../../primitives/genesis-builder" }
 sp-runtime = { path = "../../primitives/runtime" }
 sp-state-machine = { path = "../../primitives/state-machine" }
 log = { version = "0.4.17", default-features = false }
-array-bytes = { version = "6.1" }
+array-bytes = { version = "6.2" }
 docify = "0.2.7"
 
 [dev-dependencies]

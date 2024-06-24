@@ -17,7 +17,7 @@ futures = "0.3.21"
 jsonrpsee = { version = "0.20.3", features = ["client-core", "macros", "server"] }
 log = "0.4"
 parking_lot = "0.12.1"
-serde = { version = "1.0.195", features = ["derive"] }
+serde = { version = "1.0.203", features = ["derive"] }
 thiserror = "1.0"
 sc-consensus-beefy = { path = ".." }
 sp-consensus-beefy = { path = "../../../../primitives/consensus/beefy" }
